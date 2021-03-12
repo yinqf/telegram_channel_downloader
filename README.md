@@ -7,16 +7,16 @@ Telegram 频道/群组 文件下载脚本
 
 **1. 前提**
  
- - ~~安装redis~~
- 
-   ~~安装教程参考 [Redis 安装 | 菜鸟教程](https://www.runoob.com/redis/redis-install.html)~~
- 
- 
  - 从 https://my.telegram.org/apps 获取自己的Telegram API密钥。
 
  - 下载脚本
  ```
  git clone https://github.com/snow922841/telegram_channel_downloader.git
+ ```
+ 
+ - 安装fclone（可选）
+ ```
+ wget https://github.com/mawaya/rclone/releases/download/fclone-v0.4.1/fclone-v0.4.1-linux-amd64.zip -O fclone.zip && unzip fclone.zip && mv fclone*/fclone /usr/bin && chmod +x /usr/bin/fclone && fclone version
  ```
 
 **2. 使用**
@@ -44,14 +44,12 @@ Telegram 频道/群组 文件下载脚本
  - 按照提示输入telegram绑定的手机号获取验证码并输入
  
  - 配置完成后需要给bot发送 /start 频道的链接 0 才会正式开始运行脚本，否则无法启动 0代表开始下载消息的ID，可以自行修改。
+
+ **3. 常见问题**
  
- - ~~给bot发送 /ping 如果回复 peng 表示脚本正在运行，但是是否在下载还需要自己判断~~
- 
- - ~~如果30分钟内未收到bot发送的下载消息可能脚本未下载或下载完成，可以重新发送 /start 继续下载 ~~（待优化）~~（已修复）~~
- 
- - ~~可以手动配置消息偏移 给bot 发送 ‘ /change 123 ’ 代表从第123条消息开始下载，请自行修改数字。~~
- 
- - ~~异步请求会受到telegram的限制，而且任务失败在redis缓存比较麻烦，等有办法解决后在提交代码~~
+ - 关于获取admin_id
+  
+  可以在电报中给@get_id_bot这个bot发消息获取
 
 <details>
   <summary>点击查看更新日志</summary>
