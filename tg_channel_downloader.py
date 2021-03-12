@@ -81,6 +81,7 @@ async def worker(name):
         chat_title = queue_item[1]
         entity = queue_item[2]
         file_name = queue_item[3]
+        print(f"{get_local_time()} - {file_name} 开始下载")
         for filter_file in filter_file_name:
             if file_name.endswith(filter_file):
                 return
