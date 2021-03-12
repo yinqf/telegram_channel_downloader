@@ -22,8 +22,8 @@ max_num = 5  # 同时下载数量
 # filter file name/文件名过滤
 filter_list = ['你好，欢迎加入 Quantumu', '\n']
 # filter chat id /过滤某些频道不下载
-blacklist = [1388464914,]
-donwload_all_chat = False # 监控所有你加入的频道，收到的新消息如果包含媒体都会下载，默认关闭
+blacklist = []
+donwload_all_chat = True # 监控所有你加入的频道，收到的新消息如果包含媒体都会下载，默认关闭
 filter_file_name = ['', ] # 过滤文件后缀，可以填jpg、avi、mkv、rar等。
 #***********************************************************************************#
 
@@ -84,7 +84,6 @@ async def worker(name):
         #for filter_file in filter_file_name:
         #    if file_name.endswith(filter_file):
         #        return
-        print(f"{get_local_time()} - {file_name} 开始下载")        
         dirname = validateTitle(f'{chat_title}({entity.id})')
         datetime_dir_name = message.date.strftime("%Y年%m月")
         file_save_path = os.path.join(save_path, dirname, datetime_dir_name)
@@ -99,6 +98,7 @@ async def worker(name):
             task = loop.create_task(client.download_media(
                 message, os.path.join(file_save_path, file_name)))
             await asyncio.wait_for(task, timeout=3600)
+            print(f"{get_local_time()} 下载完成： {chat_title} - {file_name}")
             if upload_file_set:
                 proc = await asyncio.create_subprocess_exec('fclone',
                                                             'move',
@@ -254,7 +254,7 @@ async def all_chat_download(update):
         # 过滤文件名称中的广告等词语
         for filter_keyword in filter_list:
             file_name = file_name.replace(filter_keyword, "")
-        print(chat_title, file_name)
+        # print(chat_title, file_name)
         await queue.put((message, chat_title, entity, file_name))
 
 
