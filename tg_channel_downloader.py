@@ -81,10 +81,10 @@ async def worker(name):
         chat_title = queue_item[1]
         entity = queue_item[2]
         file_name = queue_item[3]
-        for filter_file in filter_file_name:
-            if file_name.endswith(filter_file):
-                return
-        print(f"{get_local_time()} - {file_name} 开始下载111")        
+        #for filter_file in filter_file_name:
+        #    if file_name.endswith(filter_file):
+        #        return
+        print(f"{get_local_time()} - {file_name} 开始下载")        
         dirname = validateTitle(f'{chat_title}({entity.id})')
         datetime_dir_name = message.date.strftime("%Y年%m月")
         file_save_path = os.path.join(save_path, dirname, datetime_dir_name)
