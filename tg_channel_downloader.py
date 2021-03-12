@@ -10,10 +10,10 @@ from telethon import TelegramClient, events, errors
 from telethon.tl.types import MessageMediaWebPage
 
 #***********************************************************************************#
-api_id = 1234567   # your telegram api id
-api_hash = '1234567890abcdefgh'  # your telegram api hash
+api_id = 2135439   # your telegram api id
+api_hash = 'aa38ea51ba2b484b6b11f0231a6da91a'  # your telegram api hash
 bot_token = '1234567890:ABCDEFGHIJKLMNOPQRST'  # your bot_token
-admin_id = 1234567890  # your chat id
+admin_id = 403641401  # your chat id
 save_path = '/usr/downloads'  # file save path
 upload_file_set = True  # set upload file to google drive
 drive_id = '5FyJClXmsqNw0-Rz19'  # google teamdrive id
