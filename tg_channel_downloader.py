@@ -12,7 +12,7 @@ from telethon.tl.types import MessageMediaWebPage
 #***********************************************************************************#
 api_id = 2135439   # your telegram api id
 api_hash = 'aa38ea51ba2b484b6b11f0231a6da91a'  # your telegram api hash
-bot_token = '1234567890:ABCDEFGHIJKLMNOPQRST'  # your bot_token
+bot_token = '1427552418:AAG1TuxKAz_n4swlnBh6hR_bcNHgBW3Telg'  # your bot_token
 admin_id = 403641401  # your chat id
 save_path = '/usr/downloads'  # file save path
 upload_file_set = False  # set upload file to google drive
@@ -258,8 +258,7 @@ async def all_chat_download(update):
 
 
 if __name__ == '__main__':
-    bot = TelegramClient('telegram_channel_downloader_bot',
-                         api_id, api_hash).start(bot_token=str(bot_token))
+    bot = TelegramClient('telegram_channel_downloader_bot',api_id, api_hash).start(bot_token=str(bot_token))
     client = TelegramClient(
         'telegram_channel_downloader', api_id, api_hash).start()
     bot.add_event_handler(handler)
