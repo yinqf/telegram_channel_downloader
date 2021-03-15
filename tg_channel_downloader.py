@@ -53,18 +53,6 @@ def get_equal_rate(str1, str2):
     return difflib.SequenceMatcher(None, str1, str2).quick_ratio()
 
 
-# 返回文件大小
-def bytes_to_string(byte_count):
-    suffix_index = 0
-    while byte_count >= 1024:
-        byte_count /= 1024
-        suffix_index += 1
-
-    return '{:.2f}{}'.format(
-        byte_count, [' bytes', 'KB', 'MB', 'GB', 'TB'][suffix_index]
-    )
-
-
 async def worker(name):
     while True:
         queue_item = await queue.get()
