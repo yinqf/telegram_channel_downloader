@@ -11,7 +11,7 @@ from telethon.tl.types import MessageMediaWebPage
 
 #***********************************************************************************#
 api_id = 2135439   # your telegram api id
-api_hash = 'aa38ea51ba2b484b6b11f0231a6da91a'  # your telegram api hash
+api_hash = 'aa38ea51ba2b4xxxxxxxf0231a6da91a'  # your telegram api hash
 save_path = '/root/telegram'  # file save path
 max_num = 5  # 同时下载数量
 # filter chat id /过滤某些频道不下载
